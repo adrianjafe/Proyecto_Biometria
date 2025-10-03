@@ -170,11 +170,11 @@ void loop () {
   };
   
   // elPublicador.laEmisora.emitirAnuncioIBeaconLibre ( &datos[0], 21 );
-  elPublicador.laEmisora.emitirAnuncioIBeaconLibre ( "MolaMolaMolaMolaMolaM", 21 );
+  //elPublicador.laEmisora.emitirAnuncioIBeaconLibre ( "MolaMolaMolaMolaMolaM", 21 );
 
   esperar( 2000 );
 
-  elPublicador.laEmisora.detenerAnuncio();
+  //elPublicador.laEmisora.detenerAnuncio();
   
   // 
   // 
