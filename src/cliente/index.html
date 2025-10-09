@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resultados de las mediciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Monitoreo Mediciones</h1>
+            <div class="status-indicador">
+                <div class="pulso"></div>
+                <div>
+                    <div class="status-text">System Active</div>
+                    <div class="status-time" id="lastUpdate">Ultima medición: --:--:--</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="mediciones">
+            <!-- CO2 Apartado -->
+            <div class="apartado">
+                <div class="apartado-header">
+                    <div>
+                        <div class="apartado-title">Niveles de CO2</div>
+                        <div class="valor-container">
+                            <span class="valor" id="co2Value">420</span>
+                            <span class="unidad">ppm</span>
+                        </div>
+                    </div>
+                    <div class="icono good" id="co2Icon">☁️</div>
+                </div>
+                <div class="apartado-footer">
+                    <div class="rango">
+                        <span>Min: 400ppm</span>
+                        <span>Max: 1000ppm</span>
+                    </div>
+                    <span class="status-insignia good" id="co2Status">Normal</span>
+                </div>
+            </div>
+
+            <!-- Temperature Apartado -->
+            <div class="apartado">
+                <div class="apartado-header">
+                    <div>
+                        <div class="apartado-title">Temperatura</div>
+                        <div class="valor-container">
+                            <span class="valor" id="tempValue">22.5</span>
+                            <span class="unidad">°C</span>
+                        </div>
+                    </div>
+                    <div class="icono good" id="tempIcon">🌡️</div>
+                </div>
+                <div class="apartado-footer">
+                    <div class="rango">
+                        <span>Min: 15°C</span>
+                        <span>Max: 30°C</span>
+                    </div>
+                    <span class="status-insignia good" id="tempStatus">Normal</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-seccion">
+            <h2>Información del Sensor</h2>
+            <div class="info-tabla">
+                <div class="info-bloque">
+                    <h3>Guía de mediciones CO2</h3>
+                    <ul>
+                        <li>• &lt;600 ppm: Calidad del aire excelente</li>
+                        <li>• 600-800 ppm: Calidad del aire buena</li>
+                        <li>• &gt;800 ppm: Calidad del aire baja</li>
+                    </ul>
+                </div>
+                <div class="info-bloque">
+                    <h3>Guía de mediciones Temperatura</h3>
+                    <ul>
+                        <li>• 18-24°C: Temperatura óptima</li>
+                        <li>• 25-28°C: Temperatura aceptable</li>
+                        <li>• Outside range: Temperatura elevada</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+
+
+</html>
