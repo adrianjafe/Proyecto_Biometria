@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Historial de Arduino</title>
+        <link rel="stylesheet" href="./css/history.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="header-content">
+                    <h1>📊 Measurement History</h1>
+                    <a href="./index.html" class="nav-link">← Back to Dashboard</a>
+                </div>
+            </header>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Records</div>
+                    <div class="stat-value" id="totalRecords">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Avg CO2</div>
+                    <div class="stat-value" id="avgCO2">0 ppm</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Avg Temperature</div>
+                    <div class="stat-value" id="avgTemp">0°C</div>
+                </div>
+            </div>
+        </div>
+        <div class="filters">
+            <div class="filter-group">
+                <label for="timeFilter">Time Period:</label>
+                <select id="timeFilter">
+                    <option value="all">All Time</option>
+                    <option value="today">Today</option>
+                    <option value="week">Last 7 Days</option>
+                    <option value="month">Last 30 Days</option>
+                </select>
+
+                <label for="statusFilter">Status:</label>
+                <select id="statusFilter">
+                    <option value="all">All Status</option>
+                    <option value="normal">Normal</option>
+                    <option value="warning">Warning</option>
+                    <option value="danger">Danger</option>
+                </select>
+            </div>
+        </div>
+        <div class="history-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>CO2 Level</th>
+                        <th>CO2 Status</th>
+                        <th>Temperature</th>
+                        <th>Temp Status</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </body>
+</html>
