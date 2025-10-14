@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
     // --------------------------------------------------------------
     // --------------------------------------------------------------
     private static final String ETIQUETA_LOG = ">>>>";
-
     private static final int CODIGO_PETICION_PERMISOS = 11223344;
+    private API api;
 
     // --------------------------------------------------------------
     // --------------------------------------------------------------
@@ -75,6 +75,15 @@ public class MainActivity extends AppCompatActivity {
 
     } // ()
 
+    private void insertarDatos(ScanResult resultado){
+        byte[] bytes = resultado.getScanRecord().getBytes();
+        TramaIBeacon tib = new TramaIBeacon(bytes);
+        byte[] minor = tib.getMinor();
+        int co2 = ((minor[0] & 0xFF) << 8) | (minor[1] & 0xFF);
+
+        api.insertarMediciones(co2);
+
+    }
     // --------------------------------------------------------------
     // --------------------------------------------------------------
     private void mostrarInformacionDispositivoBTLE( ScanResult resultado ) {
@@ -100,11 +109,14 @@ public class MainActivity extends AppCompatActivity {
             if (bluetoothDevice.getName() != null && bluetoothDevice.getName().equals("Adriancho")) {
                 Log.d(ETIQUETA_LOG, " nombre = " + bluetoothDevice.getName());
                 Log.d(ETIQUETA_LOG, " toString = " + bluetoothDevice.toString());
+
             } else {
-
+                Log.d(ETIQUETA_LOG, "No se ha encontrado ningun dispositivo.");
             }
-        } catch {
-
+        } catch (SecurityException e){
+            Log.e(ETIQUETA_LOG, "No tienes permisos suficientes.");
+        } catch (Exception e){
+            throw new RuntimeException(e);
         }
 
         if (tib.getUUID() != null){

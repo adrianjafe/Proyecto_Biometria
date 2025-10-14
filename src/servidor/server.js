@@ -6,6 +6,7 @@ const db = require('./config/conexion');
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
+import { recibirJson } from './LogicaNegocio';
 
 app.use(express.static('../cliente'));
 
@@ -18,5 +19,7 @@ setInterval(() => {
         }
     });
 }, 2000);
+
+
 
 server.listen(3000, () => console.log('Servidor en http://localhost:3000'));
