@@ -37,7 +37,7 @@ A continuación, se muestra cómo desplegar el servidor con **Node.js**, conecta
 | | ├── css
 | | ├── js
 | | ├── arduino-history.html
-| | └── index.html
+| | └── **index.html**
 | |
 │ ├── servidor
 | | ├── config
@@ -47,13 +47,22 @@ A continuación, se muestra cómo desplegar el servidor con **Node.js**, conecta
 | | └── **server.js**
 | |
 │ └── telefono
-|   ├── app
+|   ├── **app**
 |   | └── src
 |   |  └── main
 |   |
 |   └── gradle
 |
 └── README.md
+
+---
+
+## ⚙️ 1. Configuración del servidor Node.js
+
+### 🔹 Requisitos previos
+
+- Tener instalado [Node.js](https://nodejs.org/)
+- Tener instalado [npm](https://www.npmjs.com/)
 
 
 
