@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import org.json.JSONObject;
+
 import java.util.List;
 
 // ------------------------------------------------------------------
@@ -75,15 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     } // ()
 
-    private void insertarDatos(ScanResult resultado){
-        byte[] bytes = resultado.getScanRecord().getBytes();
-        TramaIBeacon tib = new TramaIBeacon(bytes);
-        byte[] minor = tib.getMinor();
-        int co2 = ((minor[0] & 0xFF) << 8) | (minor[1] & 0xFF);
 
-        api.insertarMediciones(co2);
-
-    }
     // --------------------------------------------------------------
     // --------------------------------------------------------------
     private void mostrarInformacionDispositivoBTLE( ScanResult resultado ) {
@@ -105,10 +99,13 @@ public class MainActivity extends AppCompatActivity {
 
         TramaIBeacon tib = new TramaIBeacon(bytes);
 
+        //Envio de datos json para la logica de negocio
         try {
             if (bluetoothDevice.getName() != null && bluetoothDevice.getName().equals("Adriancho")) {
                 Log.d(ETIQUETA_LOG, " nombre = " + bluetoothDevice.getName());
                 Log.d(ETIQUETA_LOG, " toString = " + bluetoothDevice.toString());
+                int valor = new PrepararDatos().procesarDatos(tib);
+                new EnvioDatos().enviarDatos(valor);
 
             } else {
                 Log.d(ETIQUETA_LOG, "No se ha encontrado ningun dispositivo.");
