@@ -18,3 +18,13 @@ Objetivos del Proyecto:
 - Evaluar el rendimiento del sistema: latencia de transmisión, frecuencia de muestreo y estabilidad de la conexión.
 
 - Trabajar en equipo, siguiendo buenas prácticas de control de versiones y documentación.
+
+# Proyecto hecho con Node.js, Android y Arduino
+
+A continuación, se muestra cómo desplegar el servidor con **Node.js**, conectar un **dispositivo Android** al mismo mediante la red local y conectar la **placa Arduino** a través del **Arduino IDE** o conexión serie.
+
+---
+
+## 📁 Estructura del proyecto
+
+
