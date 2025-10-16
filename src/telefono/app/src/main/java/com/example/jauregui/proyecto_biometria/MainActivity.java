@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     // --------------------------------------------------------------
     private static final String ETIQUETA_LOG = ">>>>";
     private static final int CODIGO_PETICION_PERMISOS = 11223344;
-    private API api;
 
     // --------------------------------------------------------------
     // --------------------------------------------------------------
@@ -73,7 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(ETIQUETA_LOG, " buscarTodosLosDispositivosBTL(): empezamos a escanear ");
 
-        this.elEscanner.startScan( this.callbackDelEscaneo);
+        try {
+            this.elEscanner.startScan( this.callbackDelEscaneo);
+        }catch (SecurityException e){
+            Log.e(ETIQUETA_LOG, "No tienes permisos suficientes para inicializar Bluetooth", e);
+        }
 
     } // ()
 
@@ -102,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         //Envio de datos json para la logica de negocio
         try {
             if (bluetoothDevice.getName() != null && bluetoothDevice.getName().equals("Adriancho")) {
+                Log.d(ETIQUETA_LOG, "Se ha detectado.");
                 Log.d(ETIQUETA_LOG, " nombre = " + bluetoothDevice.getName());
                 Log.d(ETIQUETA_LOG, " toString = " + bluetoothDevice.toString());
                 int valor = new PrepararDatos().procesarDatos(tib);
@@ -181,7 +185,11 @@ public class MainActivity extends AppCompatActivity {
         //Log.d(ETIQUETA_LOG, "  buscarEsteDispositivoBTLE(): empezamos a escanear buscando: " + dispositivoBuscado
           //      + " -> " + Utilidades.stringToUUID( dispositivoBuscado ) );
 
-        this.elEscanner.startScan( this.callbackDelEscaneo );
+        try {
+            this.elEscanner.startScan( this.callbackDelEscaneo);
+        }catch (SecurityException e) {
+            Log.e(ETIQUETA_LOG, "No tienes permisos suficientes para inicializar Bluetooth", e);
+        }
     } // ()
 
     // --------------------------------------------------------------
@@ -192,8 +200,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        this.elEscanner.stopScan( this.callbackDelEscaneo );
-        this.callbackDelEscaneo = null;
+        try {
+            this.elEscanner.stopScan(this.callbackDelEscaneo);
+            this.callbackDelEscaneo = null;
+        }catch (SecurityException e){
+            Log.e(ETIQUETA_LOG, "No tienes los permisos suficientes");
+        }
 
     } // ()
 
@@ -231,7 +243,12 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(ETIQUETA_LOG, " inicializarBlueTooth(): habilitamos adaptador BT ");
 
-        bta.enable();
+
+        try {
+            bta.enable();
+        }catch (SecurityException e){
+            Log.e(ETIQUETA_LOG,"No tienes los permisos suficientes.");
+        }
 
         Log.d(ETIQUETA_LOG, " inicializarBlueTooth(): habilitado =  " + bta.isEnabled() );
 
