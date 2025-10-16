@@ -25,44 +25,20 @@ A continuación, se muestra cómo desplegar el servidor con **Node.js**, conecta
 
 ---
 
-## 📁 Estructura del proyecto
-
-├── doc
-| ├── Android.pdf
-| ├── Arduino.pdf
-| └── Servidor.pdf
-|
-├── src
-│ ├── cliente
-| | ├── css
-| | ├── js
-| | ├── arduino-history.html
-| | └── **index.html**
-| |
-│ ├── servidor
-| | ├── config
-| | ├── **LogicaNegocio.js**
-| | ├── RecibirDatosApp.js
-| | ├── database.db
-| | └── **server.js**
-| |
-│ └── telefono
-|   ├── **app**
-|   | └── src
-|   |  └── main
-|   |
-|   └── gradle
-|
-└── README.md
-
----
-
 ## ⚙️ 1. Configuración del servidor Node.js
 
 ### 🔹 Requisitos previos
 
 - Tener instalado [Node.js](https://nodejs.org/)
 - Tener instalado [npm](https://www.npmjs.com/)
+
+### 🔹 Inicio servidor
+
+- Abrir una terminal de powershell.
+- Abrir la carpeta del servidor en el terminal. (...\Proyecto_Biometria\src\servidor)
+- Ejecutar en el terminal: "node server.js". Abrirá el servidor en localhost:3000.
+
+
 
 
 
