@@ -27,4 +27,38 @@ A continuación, se muestra cómo desplegar el servidor con **Node.js**, conecta
 
 ## 📁 Estructura del proyecto
 
+├── doc
+| ├── Android.pdf
+| ├── Arduino.pdf
+| └── Servidor.pdf
+|
+├── src
+│ ├── cliente
+| | ├── css
+| | ├── js
+| | ├── arduino-history.html
+| | └── index.html
+| |
+│ ├── servidor
+| | ├── config
+| | ├── **LogicaNegocio.js**
+| | ├── RecibirDatosApp.js
+| | ├── database.db
+| | └── **server.js**
+| |
+│ └── telefono
+|   ├── app
+|   | └── src
+|   |  └── main
+|   |
+|   └── gradle
+|
+└── README.md
+
+
+
+
+
+
+
 
