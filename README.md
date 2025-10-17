@@ -52,6 +52,16 @@ A continuación, se muestra cómo desplegar el servidor con **Node.js**, conecta
 - Empezar a escanear dispositivos con el botón, "BUSCAR DISPOSITIVOS BTLE NOU 4".
 - Si esta todo en orden, el servidor recibirá los datos, los insertara en la base de datos y los mostrará en la página web.
 
+## Tests
+
+### Requisitos
+- Tener instalado **npm**.
+
+### Pasos
+- Abrir terminal de Windows.
+- Ir a "...\Proyecto_Biometria\src\servidor"
+- Ejecutar en la terminal "npm test".
+
 
 
 
