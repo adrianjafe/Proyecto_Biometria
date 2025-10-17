@@ -27,16 +27,32 @@ A continuación, se muestra cómo desplegar el servidor con **Node.js**, conecta
 
 ## ⚙️ 1. Configuración del servidor Node.js
 
-### 🔹 Requisitos previos
+### · Requisitos previos
 
-- Tener instalado [Node.js](https://nodejs.org/)
+- Tener instalado [Node.js](https://nodejs.org/) (Si tenemos instalado npm: npm install node).
 - Tener instalado [npm](https://www.npmjs.com/)
 
-### 🔹 Inicio servidor
-
+### · Inicio servidor
 - Abrir una terminal de powershell.
-- Abrir la carpeta del servidor en el terminal. (...\Proyecto_Biometria\src\servidor)
-- Ejecutar en el terminal: "node server.js". Abrirá el servidor en localhost:3000.
+- Abrir la carpeta del servidor en la terminal. (...\Proyecto_Biometria\src\servidor)
+- Ejecutar en la terminal: "node server.js". Abrirá el servidor en localhost:3000.
+- Abrir en el navegador: localhost:3000.
+
+## 🔌 2. Conexión con Arduino
+- Conectar toda la placa y el sensor con la placa al ordenador.
+
+## 📱 3. Conexión con Android
+
+### · Requisitos
+- El PC (servidor) y el Android tienen que estar en la misma red.
+- El servidor Node.js debe estar en ejecución para que el android pueda enviar datos correctamente.
+
+### · Inicio de envío de datos de la APP
+- Iniciar la aplciación de Android.
+- Empezar a escanear dispositivos con el botón, "BUSCAR DISPOSITIVOS BTLE NOU 4".
+- Si esta todo en orden, el servidor recibirá los datos, los insertara en la base de datos y los mostrará en la página web.
+
+
 
 
 
