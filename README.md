@@ -39,7 +39,7 @@ A continuación, se muestra cómo desplegar el servidor con **Node.js**, conecta
 - Abrir en el navegador: localhost:3000.
 
 ## 🔌 2. Conexión con Arduino
-- Conectar toda la placa y el sensor con la placa al ordenador.
+- Conectar el sensor con la placa al ordenador.
 
 ## 📱 3. Conexión con Android
 
