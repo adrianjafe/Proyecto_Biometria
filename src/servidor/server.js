@@ -12,8 +12,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('../cliente'));
 
+//Inicio del servidor en el puerto 3000
 server.listen(3000, () => console.log('Servidor en http://localhost:3000'));
 
+//API------------------------------------------------------------------------------------------
 app.post("/mediciones",(req, res) => {
     console.log(req.body);
     const {Co2,Fecha} = req.body;
@@ -30,3 +32,4 @@ app.get("/mediciones/latest", (req, res) => {
         }
     });
 });
+//--------------------------------------------------------------------------------------------

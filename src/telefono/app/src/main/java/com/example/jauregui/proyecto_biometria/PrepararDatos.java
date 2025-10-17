@@ -6,6 +6,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PrepararDatos{
+
+    //-----------------------------------------------------------//
+    //                          jsonTransform                    //
+    //      Descripción: Recibe los datos y devuelve un json     //
+    //-----------------------------------------------------------//
     public JSONObject jsonTransform(int co2) {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -20,6 +25,10 @@ public class PrepararDatos{
         }
     }
 
+    //-----------------------------------------------------------------------------//
+    //                     procesarDatos                                           //
+    //      Descripción: Recibe la trama, procesa la trama y devuelve el valor     //
+    //-----------------------------------------------------------------------------//
     public int procesarDatos(TramaIBeacon tib){
         //Procesar trama minor
         byte[] minor = tib.getMinor();
