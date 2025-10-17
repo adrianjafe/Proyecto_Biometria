@@ -18,3 +18,32 @@ Objetivos del Proyecto:
 - Evaluar el rendimiento del sistema: latencia de transmisión, frecuencia de muestreo y estabilidad de la conexión.
 
 - Trabajar en equipo, siguiendo buenas prácticas de control de versiones y documentación.
+
+# Proyecto hecho con Node.js, Android y Arduino
+
+A continuación, se muestra cómo desplegar el servidor con **Node.js**, conectar un **dispositivo Android** al mismo mediante la red local y conectar la **placa Arduino** a través del **Arduino IDE** o conexión serie.
+
+---
+
+## ⚙️ 1. Configuración del servidor Node.js
+
+### 🔹 Requisitos previos
+
+- Tener instalado [Node.js](https://nodejs.org/)
+- Tener instalado [npm](https://www.npmjs.com/)
+
+### 🔹 Inicio servidor
+
+- Abrir una terminal de powershell.
+- Abrir la carpeta del servidor en el terminal. (...\Proyecto_Biometria\src\servidor)
+- Ejecutar en el terminal: "node server.js". Abrirá el servidor en localhost:3000.
+
+
+
+
+
+
+
+
+
+
