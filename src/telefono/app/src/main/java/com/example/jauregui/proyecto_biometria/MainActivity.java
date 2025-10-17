@@ -109,8 +109,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(ETIQUETA_LOG, " nombre = " + bluetoothDevice.getName());
                 Log.d(ETIQUETA_LOG, " toString = " + bluetoothDevice.toString());
                 int valor = new PrepararDatos().procesarDatos(tib);
-                new EnvioDatos().enviarDatos(valor);
+                Log.d(ETIQUETA_LOG,"valor: "+valor);
 
+                new Thread(() -> new EnvioDatos().enviarDatos(valor)).start();
             } else {
                 Log.d(ETIQUETA_LOG, "No se ha encontrado ningun dispositivo.");
             }

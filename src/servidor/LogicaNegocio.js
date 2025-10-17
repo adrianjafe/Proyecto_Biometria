@@ -12,6 +12,7 @@ app.use(express.static('../cliente'));
 export function insertarMediciones(datosjs){
     const {Co2, Fecha} = datosjs;
     const sql = 'INSERT INTO Mediciones (Co2, Fecha) VALUES (?, ?)';
+    console.log(datosjs);
     db.run(sql, [Co2, Fecha], (err) => {
         if (err) {
             console.error('Error al insertar en SQLite:', err.message);
@@ -21,12 +22,14 @@ export function insertarMediciones(datosjs){
     });
 }
 
-export function mostrarMediciones(io){
+export function mostrarMediciones(callback){
     db.get('SELECT Co2, Fecha FROM Mediciones ORDER BY Id DESC LIMIT 1', (err, row) => {
         if (err) {
             console.error('Error al consultar SQLite:', err.message);
+            callback(err,null);
         } else if (row) {
-            io.emit('Nueva_medicion', row);
+            //console.log('Última medición:', row);
+            callback(null,row);
         }
     });
 }
